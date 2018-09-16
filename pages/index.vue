@@ -1,10 +1,14 @@
 <template>
-  <section>
-    <h1 class="header">Nuxt TypeScript Starter</h1>
-    <div class="cards">
-      <Card v-for="person in people" :key="person.id" :person="person"></Card>
-    </div>
-  </section>
+  <div>
+    <h3>Name</h3>
+    <p>
+      fmatzy
+    </p>
+    <h3>About</h3>
+    <p>
+      Go/Ruby/TypeScriptについて勉強中。
+    </p>
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,26 +16,11 @@ import {
   Component,
   Vue
 } from "nuxt-property-decorator"
-import { State } from "vuex-class"
-import Card from "~/components/Card.vue"
 
-@Component({
-  components: {
-    Card
-  }
-})
+@Component({})
 export default class extends Vue {
-  @State people
 }
 </script>
-<style scoped>
-.header {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana,
-    sans-serif;
-}
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-}
+<style scoped lang="scss">
 </style>
