@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Qiita Posts</h2>
+    <h2>Newest Qiita Posts</h2>
     <ol class="posts">
       <Post v-for="post in posts" :key="post.id" :post="post"></Post>
     </ol>
@@ -25,7 +25,7 @@ export default class extends Vue {
   @Prop() posts
 
   async mounted() {
-    const { data: posts } = await axios.get("https://qiita.com/api/v2/users/fmatzy/items")
+    const { data: posts } = await axios.get("https://qiita.com/api/v2/users/fmatzy/items?page=1&per_page=10")
     this.posts = posts
   }
 }
