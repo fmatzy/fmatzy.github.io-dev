@@ -1,23 +1,19 @@
 <template>
-  <div>
-    <h3>Name</h3>
-    <p>
-      fmatzy
-    </p>
-    <h3>About</h3>
-    <p>
-      Go/Ruby/TypeScriptについて勉強中。
-    </p>
-  </div>
+  <About/>
 </template>
 
 <script lang="ts">
 import {
   Component,
-  Vue
+  Vue,
 } from "nuxt-property-decorator"
+import About from "~/components/About.vue"
 
-@Component({})
+@Component({
+  components: {
+    About
+  },
+})
 export default class extends Vue {
 }
 </script>

@@ -58,8 +58,14 @@ module.exports = {
   build: {},
   modules: [
     "@nuxtjs/axios",
+    '@nuxtjs/markdownit',
     ['bootstrap-vue/nuxt', { css: false }],
-    "~/modules/typescript.js"
+    "~/modules/typescript.js",
   ],
-  axios: {}
+  axios: {},
+  markdownit: {
+    preset: 'default',
+    linkify: false,
+    breaks: true,
+  },
 }
