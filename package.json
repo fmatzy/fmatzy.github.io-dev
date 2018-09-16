@@ -17,7 +17,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --remote=gh-pages --allow-unclean"
+    "deploy": "push-dir --dir=dist --remote=gh-pages --branch=master --allow-unclean --cleanup"
   },
   "devDependencies": {
     "@types/moment": "^2.13.0",
