@@ -16,11 +16,13 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --remote=gh-pages --allow-unclean"
   },
   "devDependencies": {
     "@types/moment": "^2.13.0",
     "@types/node": "^9.4.6",
+    "push-dir": "^0.4.1",
     "ts-loader": "^3.5.0",
     "typescript": "^2.7.2"
   }
