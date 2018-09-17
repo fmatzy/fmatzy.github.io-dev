@@ -1,19 +1,22 @@
 <template lang="md">
-# fmatzy.github.io
+## Portfolio
 
-## Name
+### Name
 
 fmatzy
 
-## About
+### About
+
+京都大学大学院を修了後、某メーカーにてIoTっぽいことをやっています。
 
 Go/Ruby/TypeScriptについて勉強中。
 
-## Links
+### Links
 
 - [GitHub](https://github.com/fmatzy)
 - [Qiita](https://qiita.com/fmatzy)
 - [Twitter](https://twitter.com/fmatzy)
+- [Hatena Blog](https://fmatzy.hatenablog.com/)
 </template>
 
 <script lang="ts">
