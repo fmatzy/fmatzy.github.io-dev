@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Newest Qiita Posts</h2>
+    <h2>Recently Qiita Posts</h2>
     <ol class="posts">
       <Post v-for="post in posts" :key="post.id" :post="post"></Post>
     </ol>
