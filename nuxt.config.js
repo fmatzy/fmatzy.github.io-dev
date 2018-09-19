@@ -61,6 +61,9 @@ module.exports = {
     '@nuxtjs/markdownit',
     ['bootstrap-vue/nuxt', { css: false }],
     "~/modules/typescript.js",
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-117437753-3'
+    }]
   ],
   axios: {},
   markdownit: {
