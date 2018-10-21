@@ -3,12 +3,12 @@
     <div class="box">
       <div calss="content">
         <p>
-          <a class="is-size-5" :href="post.url">{{post.title}}</a>
+          <a :href="post.url">{{post.title}}</a>
           <br>
-          <span class="is-size-7 is-text-grey">{{ post.created_at | formatTime }}</span>
+          <span class="is-size-7 has-text-grey">{{ post.created_at | formatTime }}</span>
         </p>
       </div>
-      <p class="level is-mobile">
+      <nav class="level is-mobile">
         <div class="level-left">
           <div class="level-item">
             <div class="tags has-addons">
@@ -20,7 +20,7 @@
             <span class="tag is-grey is-rounded">{{tag.name}}</span>
           </div>
         </div>
-      </p>
+      </nav>
     </div>
   </div>
 </template>
