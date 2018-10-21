@@ -1,9 +1,7 @@
 <template>
   <div>
     <Navbar/>
-    <b-container fluid id="main-content">
-      <nuxt/>
-    </b-container>
+    <nuxt/>
   </div>
 </template>
 
@@ -24,7 +22,4 @@ export default class extends Vue {
 </script>
 
 <style lang="scss" scoped>
-#main-content {
-  padding: 1rem;
-}
 </style>

@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <h2>GitHub Repositories</h2>
-    <ol class="repos" v-if="repos.isReady">
-      <Repository v-for="repo in repos.data" :key="repo.id" :repo="repo"></Repository>
-    </ol>
-    <p v-else>Now loading...</p>
-  </div>
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-2">GitHub Repositories</h2>
+      <div class="columns is-multiline" v-if="repos.isReady">
+        <Repository v-for="repo in repos.data" :key="repo.id" :repo="repo"></Repository>
+      </div>
+      <div v-else class="is-loading has-text-justified">Now loading...</div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -38,13 +40,4 @@ export default class extends Vue {
 </script>
 
 <style scoped lang="scss">
-.header {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana,
-    sans-serif;
-}
-
-.repos {
-  list-style: none;
-  padding: 0;
-}
 </style>

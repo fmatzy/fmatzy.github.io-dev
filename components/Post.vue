@@ -1,8 +1,28 @@
 <template>
-  <li class="post">
-    <span class="title"><a :href="post.url">{{post.title}}</a></span>
-    <span class="created">{{ post.created_at | formatTime }}</span>
-  </li>
+  <div class="column is-half">
+    <div class="box">
+      <div calss="content">
+        <p>
+          <a class="is-size-5" :href="post.url">{{post.title}}</a>
+          <br>
+          <span class="is-size-7 is-text-grey">{{ post.created_at | formatTime }}</span>
+        </p>
+      </div>
+      <p class="level is-mobile">
+        <div class="level-left">
+          <div class="level-item">
+            <div class="tags has-addons">
+              <span class="tag is-success"><i class="fas fa-thumbs-up"></i></span>
+              <span class="tag">{{post.likes_count}}</span>
+            </div>
+          </div>
+          <div class="level-item" v-for="tag in post.tags" :key="tag.name">
+            <span class="tag is-grey is-rounded">{{tag.name}}</span>
+          </div>
+        </div>
+      </p>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -26,20 +46,4 @@ export default class Post extends Vue {
 </script>
 
 <style scoped lang="scss">
-.post {
-  padding: 1rem;
-  margin: 0 0 0.2rem 0;
-  border-top: 1px solid #e8e8e8;
-
-  .title {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  .created {
-    display: block;
-    font-size: 0.8rem;
-    color: gray;
-  }
-}
 </style>

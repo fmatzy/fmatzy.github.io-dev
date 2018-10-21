@@ -1,8 +1,28 @@
 <template>
-  <li class="repository">
-    <span class="name"><a :href="repo.html_url">{{repo.name}}</a></span>
-    <span class="description">{{repo.description}}</span>
-  </li>
+  <div class="column is-half">
+    <div class="box">
+      <div class="content">
+        <p>
+        <a :href="repo.html_url">{{repo.name}}</a>
+        <br>
+        <span class="has-text-grey">{{repo.description}}</span>
+        </p>
+      </div>
+      <nav class="level is-mobile">
+        <div class="level-left">
+          <div class="level-item" v-if="repo.language">
+            <span class="tag is-info is-rounded">{{repo.language}}</span>
+          </div>
+          <div class="level-item">
+            <div class="tags has-addons">
+              <span class="tag is-dark"><i class="fas fa-star"></i></span>
+              <span class="tag">{{repo.stargazers_count}}</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -19,18 +39,4 @@ export default class Repository extends Vue {
 </script>
 
 <style scoped lang="scss">
-.repository {
-  padding: 1rem;
-  margin: 0 0 0.2rem 0;
-  border-top: 1px solid #e8e8e8;
-
-  .name {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  .description {
-    display: block;
-  }
-}
 </style>

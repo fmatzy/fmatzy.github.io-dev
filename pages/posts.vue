@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <h2>Recently Qiita Posts</h2>
-    <ol class="posts" v-if="posts.isReady">
-      <Post v-for="post in posts.data" :key="post.id" :post="post"></Post>
-    </ol>
-    <p v-else>Now loading...</p>
-  </div>
+  <section class="section">
+    <div class="container">
+      <h2 class="title is-2">Recently Qiita Posts</h2>
+      <div class="columns is-multiline" v-if="posts.isReady">
+        <Post v-for="post in posts.data" :key="post.id" :post="post"></Post>
+      </div>
+      <div v-else class="is-loading has-text-justified">Now loading...</div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -38,13 +40,4 @@ export default class extends Vue {
 </script>
 
 <style scoped lang="scss">
-.header {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana,
-    sans-serif;
-}
-
-.posts {
-  list-style: none;
-  padding: 0;
-}
 </style>
