@@ -5,7 +5,7 @@
       <strong>fmatzy</strong> (Yusei FUJIMATSU)
     </p>
     <p>
-      京都大学大学院を修了後、某メーカーにてIoTっぽいことをやっています。
+      某メーカーにてIoTっぽいことをやっています。
       <br>
       Go/Ruby/TypeScriptについて勉強中。
     </p>
