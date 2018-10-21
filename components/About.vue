@@ -1,22 +1,15 @@
-<template lang="md">
-## Portfolio
-
-### Name
-
-fmatzy
-
-### About
-
-京都大学大学院を修了後、某メーカーにてIoTっぽいことをやっています。
-
-Go/Ruby/TypeScriptについて勉強中。
-
-### Links
-
-- [GitHub](https://github.com/fmatzy)
-- [Qiita](https://qiita.com/fmatzy)
-- [Twitter](https://twitter.com/fmatzy)
-- [Hatena Blog](https://fmatzy.hatenablog.com/)
+<template>
+  <div class="content">
+    <h2 class="title is-2">About</h2>
+    <p>
+      <strong>fmatzy</strong> (Yusei FUJIMATSU)
+    </p>
+    <p>
+      某メーカーにてIoTっぽいことをやっています。
+      <br>
+      Go/Ruby/TypeScriptについて勉強中。
+    </p>
+  </div>
 </template>
 
 <script lang="ts">
@@ -24,8 +17,13 @@ import {
   Component,
   Vue,
 } from "nuxt-property-decorator"
+import Links from "~/components/Links.vue"
 
-@Component({})
+@Component({
+  components: {
+    Links
+  },
+})
 export default class About extends Vue {
 }
 </script>

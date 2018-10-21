@@ -54,16 +54,21 @@ module.exports = {
   /*
   ** Build configuration
   */
-  css: ["~/assets/scss/app.scss"],
+  css: [
+    '@fortawesome/fontawesome-free-webfonts',
+    '@fortawesome/fontawesome-free-webfonts/css/fa-brands.css',
+    '@fortawesome/fontawesome-free-webfonts/css/fa-regular.css',
+    '@fortawesome/fontawesome-free-webfonts/css/fa-solid.css',
+  ],
   build: {},
   modules: [
+    "~/modules/typescript.js",
     "@nuxtjs/axios",
     '@nuxtjs/markdownit',
-    ['bootstrap-vue/nuxt', { css: false }],
-    "~/modules/typescript.js",
     ['@nuxtjs/google-analytics', {
       id: 'UA-117437753-3'
-    }]
+    }],
+    "nuxt-buefy",
   ],
   axios: {},
   markdownit: {
@@ -71,4 +76,7 @@ module.exports = {
     linkify: false,
     breaks: true,
   },
+  buefy: {
+    materialDesignIcons: false,
+  }
 }
