@@ -1,9 +1,10 @@
 <template>
   <div>
     <h2>Recently Qiita Posts</h2>
-    <ol class="posts">
-      <Post v-for="post in posts" :key="post.id" :post="post"></Post>
+    <ol class="posts" v-if="posts.isReady">
+      <Post v-for="post in posts.data" :key="post.id" :post="post"></Post>
     </ol>
+    <p v-else>Now loading...</p>
   </div>
 </template>
 
@@ -13,8 +14,13 @@ import {
   Prop,
   Vue
 } from "nuxt-property-decorator"
+import {
+  State,
+  Action,
+} from "vuex-class"
 import axios from "axios"
 import Post from "~/components/Post.vue"
+import { PostsState } from "store/posts";
 
 @Component({
   components: {
@@ -22,11 +28,11 @@ import Post from "~/components/Post.vue"
   }
 })
 export default class extends Vue {
-  @Prop() posts
+  @State("posts") posts: PostsState;
+  @Action("fetchData", { namespace: "posts" }) fetchData: any;
 
   async mounted() {
-    const { data: posts } = await axios.get("https://qiita.com/api/v2/users/fmatzy/items?page=1&per_page=10")
-    this.posts = posts
+    this.fetchData();
   }
 }
 </script>
