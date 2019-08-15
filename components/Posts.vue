@@ -1,9 +1,14 @@
 <template>
   <div class="content">
     <h2 class="title is-2">Recently Qiita Posts</h2>
-    <div class="columns is-multiline" v-if="posts.isReady">
-      <Post class="column is-half" v-for="post in posts.data" :key="post.id" :post="post"></Post>
-    </div>
+    <template v-if="posts.isReady">
+      <div class="columns is-multiline" v-if="posts.data.length">
+        <Post class="column is-half" v-for="post in posts.data" :key="post.id" :post="post"></Post>
+      </div>
+      <div v-else>
+        <i class="fas fa-exclamation-circle fa-fw"></i> No items found.
+      </div>
+    </template>
     <Loading v-else></Loading>
   </div>
 </template>

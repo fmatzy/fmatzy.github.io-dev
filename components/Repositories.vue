@@ -1,9 +1,14 @@
 <template>
   <div class="content">
     <h2 class="title is-2">GitHub Repositories</h2>
-    <div class="columns is-multiline" v-if="repos.isReady">
-      <Repository class="column is-half" v-for="repo in repos.data" :key="repo.id" :repo="repo"></Repository>
-    </div>
+    <template v-if="repos.isReady">
+      <div class="columns is-multiline" v-if="repos.data.length">
+        <Repository class="column is-half" v-for="repo in repos.data" :key="repo.id" :repo="repo"></Repository>
+      </div>
+      <div v-else>
+        <i class="fas fa-exclamation-circle fa-fw"></i> No items found.
+      </div>
+    </template>
     <Loading v-else></Loading>
   </div>
 </template>

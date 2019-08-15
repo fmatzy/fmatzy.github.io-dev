@@ -14,7 +14,13 @@ export const state = (): PostsState => ({
 export const actions: ActionTree<PostsState, any> = {
   async fetchData(context: ActionContext<PostsState, any>) {
     if (!context.state.isReady) {
-      const { data } = await axios.get("https://qiita.com/api/v2/users/fmatzy/items?page=1&per_page=10");
+      let data: any[];
+      try {
+        ({ data } = await axios.get<any[]>("https://qiita.com/api/v2/users/fmatzy/items?page=1&per_page=10"));
+      }
+      catch (err) {
+        data = [];
+      }
       context.commit('postsLoaded', data);
     }
   },

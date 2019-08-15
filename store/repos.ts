@@ -18,8 +18,15 @@ export const state = (): ReposState => ({
 export const actions: ActionTree<ReposState, any> = {
   async fetchData(context: ActionContext<ReposState, any>) {
     if (!context.state.isReady) {
-      const { data } = await axios.get("https://api.github.com/users/fmatzy/repos")
-      context.commit('reposLoaded', data);
+      let data: any[];
+      try {
+        ({ data } = await axios.get<any[]>("https://api.github.com/users/fmatzy/repos"));
+      }
+      catch (err) {
+        data = [];
+      }
+      const exceptForked = data.filter(item => !item.fork);
+      context.commit('reposLoaded', exceptForked);
     }
   },
 };
