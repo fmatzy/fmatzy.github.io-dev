@@ -30,7 +30,7 @@ import Repository from "~/components/Repository.vue"
   }
 })
 export default class extends Vue {
-  @State("repos") repos: ReposState;
+  @State("repos") repos!: ReposState;
   @Action("fetchData", { namespace: "repos" }) fetchData: any;
 
   async mounted() {
