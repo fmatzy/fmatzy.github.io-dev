@@ -61,19 +61,10 @@ module.exports = {
   build: {},
   modules: [
     "@nuxtjs/axios",
-    '@nuxtjs/markdownit',
+    '@nuxtjs/bulma',
     ['@nuxtjs/google-analytics', {
       id: 'UA-117437753-3'
     }],
-    "nuxt-buefy",
   ],
   axios: {},
-  markdownit: {
-    preset: 'default',
-    linkify: false,
-    breaks: true,
-  },
-  buefy: {
-    materialDesignIcons: false,
-  }
 }
