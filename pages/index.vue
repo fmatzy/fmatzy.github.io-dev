@@ -2,8 +2,8 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="columns is-centered">
-          <div class="column is-10 is-8-desktop">
+        <div class="columns">
+          <div class="column is-offset-1 is-offset-2-desktop">
             <About />
           </div>
         </div>

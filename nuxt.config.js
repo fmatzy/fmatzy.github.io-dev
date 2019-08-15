@@ -55,13 +55,21 @@ module.exports = {
   ** Build configuration
   */
   css: [
+    { src: '~assets/css/main.scss', lang: 'scss' },
     '@fortawesome/fontawesome-free',
     '@fortawesome/fontawesome-free/css/all.css',
   ],
-  build: {},
+  build: {
+    postcss: {
+      preset: {
+        features: {
+          customProperties: false
+        }
+      }
+    },
+  },
   modules: [
     "@nuxtjs/axios",
-    '@nuxtjs/bulma',
     ['@nuxtjs/google-analytics', {
       id: 'UA-117437753-3'
     }],
