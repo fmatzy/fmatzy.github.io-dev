@@ -55,14 +55,11 @@ module.exports = {
   ** Build configuration
   */
   css: [
-    '@fortawesome/fontawesome-free-webfonts',
-    '@fortawesome/fontawesome-free-webfonts/css/fa-brands.css',
-    '@fortawesome/fontawesome-free-webfonts/css/fa-regular.css',
-    '@fortawesome/fontawesome-free-webfonts/css/fa-solid.css',
+    '@fortawesome/fontawesome-free',
+    '@fortawesome/fontawesome-free/css/all.css',
   ],
   build: {},
   modules: [
-    "~/modules/typescript.js",
     "@nuxtjs/axios",
     '@nuxtjs/markdownit',
     ['@nuxtjs/google-analytics', {

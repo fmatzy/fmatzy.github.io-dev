@@ -30,7 +30,7 @@ import { PostsState } from "store/posts";
   }
 })
 export default class extends Vue {
-  @State("posts") posts: PostsState;
+  @State("posts") posts!: PostsState;
   @Action("fetchData", { namespace: "posts" }) fetchData: any;
 
   async mounted() {

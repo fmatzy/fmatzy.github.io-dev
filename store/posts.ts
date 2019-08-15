@@ -1,10 +1,5 @@
-import {
-  ActionTree,
-  MutationTree,
-  ActionContext,
-  GetterTree
-} from "vuex"
-import axios from "axios"
+import axios from "axios";
+import { ActionContext, ActionTree, MutationTree } from "vuex";
 
 export interface PostsState {
   data: any[];
