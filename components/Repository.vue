@@ -41,4 +41,7 @@ export default class Repository extends Vue {
 </script>
 
 <style scoped lang="scss">
+.media-content {
+  overflow-x: visible !important;
+}
 </style>
