@@ -1,29 +1,27 @@
 <template>
-  <section class="section">
-    <div class="container">
-      <About/>
-      <br>
-      <Links/>
-    </div>
-  </section>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-10 is-8-desktop">
+            <About />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script lang="ts">
-import {
-  Component,
-  Vue,
-} from "nuxt-property-decorator"
-import About from "~/components/About.vue"
-import Links from "~/components/Links.vue"
+import { Component, Vue } from "nuxt-property-decorator";
+import About from "~/components/About.vue";
 
 @Component({
   components: {
     About,
-    Links,
-  },
+  }
 })
-export default class extends Vue {
-}
+export default class extends Vue {}
 </script>
 
 <style scoped lang="scss">
